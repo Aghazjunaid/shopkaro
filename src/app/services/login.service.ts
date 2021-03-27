@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 export class LoginService {
   private userSource= new BehaviorSubject<boolean>(false)
   public userData = this.userSource.asObservable()
-
+  
   constructor(private http:HttpClient){ }
 
   updateUser(userData: any){
