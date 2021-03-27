@@ -1,1 +1,48 @@
-<p>login works!</p>
+<div fxLayout="row" fxLayoutAlign="space-around center" class="form-container">
+    <mat-card class="matCard">
+        <div class="sign">
+            Sign In
+        </div>
+        <form [formGroup]= "form"  (ngSubmit)="onSubmit()">
+            <div fxLayout="column" fxLayoutAlign="space-around center" >
+                <div class="formEmail" fxLayout="row" fxFlex="100" fxLayoutAlign="center">
+                    <mat-form-field appearance="fill" class="formCard">
+                        <mat-label>Enter your email</mat-label>
+                        <input formControlName="email" matInput placeholder="aghaz@example.com" required>
+                        <mat-icon matSuffix> email</mat-icon>
+                    </mat-form-field>
+                </div> 
+                <mat-form-field appearance="fill" class="formCard">
+                    <mat-label>Enter your password</mat-label>
+                    <input formControlName="password" type="password" matInput placeholder="Conform Password" required>
+                    <mat-icon matSuffix> password</mat-icon>
+                </mat-form-field>
+                <div>
+                    <button mat-stroked-button class="formButton" >
+                         <a>Sign In</a>
+                    </button>
+                </div>
+                <div class="text-1">
+                    Or SignIn With
+                </div>
+			</div>
+		</form>
+		<form>
+			<div fxLayout="column" fxLayoutAlign="space-around center" >
+                <div fxLayout="row" fxLayoutAlign="space-around" >
+                    <button mat-raised-button color="primary" class="fbButton">Facebook</button>
+                    <div fxFlex="10"></div>
+                    <button mat-raised-button color="warn" class="googleButton">Google</button>
+                </div>
+				<div fxLayout="row" fxLayoutAlign="center center" class="forgetPass" >
+				<a href = "" class="pass">Forgot Password</a> 
+				</div>
+				<hr>
+				<div fxLayout="row" fxLayoutAlign="center center" class="text-2" >
+					Don't have an account? 
+					<button mat-button class="loginBtn">Register here</button>
+				</div>
+			</div>
+        </form>
+    </mat-card>
+</div>
