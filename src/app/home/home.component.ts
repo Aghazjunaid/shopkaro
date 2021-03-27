@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product.service'
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  products: any;
+
+  constructor( private productService:ProductService) 
+  { }
 
   ngOnInit(): void {
+    debugger
+    this.productService.getProducts().subscribe(data => {
+      debugger
+      console.log(data)
+      this.products = data
+    }, error => { debugger
+       return ('Its a Trap!')})
+
   }
 
 }

@@ -19,5 +19,5 @@ export class ProductService {
   getProducts() {
     let url = `${environment.apiUrl}/product`
     return this.http.get(url)
-}
+  }
 }
