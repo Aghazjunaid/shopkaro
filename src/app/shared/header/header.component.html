@@ -1,1 +1,35 @@
-<p>header works!</p>
+<mat-toolbar>
+    <div fxLayout="row"> 
+        <div fxFlex="30px"></div>
+        <div class="logo" fxLayoutAlign="center center">
+          <a routerLink="/" > ShopKaro </a>
+        </div>
+        <div fxFlex="600px"></div>
+        <div>
+            <mat-form-field floatLabel="never" class="search">
+                <input matInput placeholder="Search">
+                <a routerLink=""><mat-icon prefix>search</mat-icon></a>
+            </mat-form-field>
+        </div>
+        <div fxFlex="50px"></div>
+        <div class="login" fxLayoutAlign="center center">
+            <a routerLink="/login"></a>
+        </div>
+        <div fxFlex="40px"></div>
+        <div class="login" fxLayoutAlign="center center">
+            <a routerLink="/cart">
+                <mat-icon prefix>shopping_cart</mat-icon>Cart</a>
+        </div>
+        <div fxFlex="40px"></div>
+        <div class="login" fxLayoutAlign="center center">
+            <a routerLink="/wishlist">
+                <mat-icon prefix>favorite</mat-icon>Wishlist</a>
+        </div>
+        <div fxFlex="40px"></div>
+        <div class="login" fxLayoutAlign="center center">
+            <a routerLink="/wishlist">
+                Order</a>
+        </div>
+        
+    </div>
+</mat-toolbar>
