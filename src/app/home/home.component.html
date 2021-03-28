@@ -1,17 +1,19 @@
-<div *ngFor="let product of products.data | slice:0:3; let i=index">
+<div fxLayout="row" *ngFor="let product of products | slice:0:5; let i=index">
     <mat-card class="card" >
-        <div class="image">
+        <div class="image" fxLayout="row" fxLayoutAlign="center center">
             <img mat-card-image src="../../assets/pic.jpg" alt="Product Image">
         </div>
-        <!-- <mat-card-title > {{product.name}} </mat-card-title> -->
-        <!-- <mat-card-title > {{product.category.categoryName}} </mat-card-title> -->
+        <mat-card-title class="name"> {{product[i].name}} </mat-card-title>
+        <mat-card-title class="category"> {{product[i].category.categoryName}} </mat-card-title>
         <hr>
-        <div fxLayout="row" fxLayoutAlign=" center" >
-            <!-- <mat-card-title > {{product.price}} </mat-card-title>
-            <mat-card-title > {{product.currency}} </mat-card-title> -->
+        <div fxLayout="row" fxLayoutAlign="center center" >
+            <mat-card-title class="price"> {{product[i].price}} </mat-card-title>
+            <div fxFlex="15px"></div>
+            <mat-card-title class="currency" > {{product[i].currency}} </mat-card-title>
         </div>
-        <mat-card-actions>
+        <mat-card-actions fxLayout="row" fxLayoutAlign="center center" >
             <button mat-raised-button color="primary">Add to Cart</button>
+            <div fxFlex="15px"></div>
             <button mat-raised-button color="warn">Product Details</button>
         </mat-card-actions>
     </mat-card>

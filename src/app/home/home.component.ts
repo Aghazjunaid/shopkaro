@@ -8,20 +8,22 @@ import { ProductService } from '../services/product.service'
 })
 export class HomeComponent implements OnInit {
 
-  products: any;
+  products: any = [];
 
   constructor( private productService:ProductService) 
   { }
 
   ngOnInit(): void {
     debugger
-    this.productService.getProducts().subscribe(data => {
+    this.productService.getProducts().subscribe(response => {
       debugger
-      console.log(data)
-      this.products = data
-    }, error => { debugger
-       return ('Its a Trap!')})
-
+      for(var i = 0; i < response['data'].length;i++){
+        console.log(response)
+        this.products.push(response['data'])
+      }
+     
+    }, error => {
+       return ('Error!')})
   }
 
 }
