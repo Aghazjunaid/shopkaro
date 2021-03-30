@@ -1,8 +1,8 @@
 <div class="container-fluid mt-3 mb-3">
     <div class="row g-2">
         <div class="col-md-4">
-            <div *ngFor="let product of products | slice:0:5; let i=index">
-                <mat-card class="card" >
+            <div>
+                <mat-card class="card"  *ngFor="let product of products | slice:0:5; let i=index" >
                     <div class="image" fxLayout="row" fxLayoutAlign="center center">
                         <img mat-card-image src="../../assets/pic.jpg" alt="Product Image">
                     </div>
