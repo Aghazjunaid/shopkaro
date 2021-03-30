@@ -1,20 +1,26 @@
-<div fxLayout="row" *ngFor="let product of products | slice:0:5; let i=index">
-    <mat-card class="card" >
-        <div class="image" fxLayout="row" fxLayoutAlign="center center">
-            <img mat-card-image src="../../assets/pic.jpg" alt="Product Image">
+<div class="container-fluid mt-3 mb-3">
+    <div class="row g-2">
+        <div class="col-md-4">
+            <div *ngFor="let product of products | slice:0:5; let i=index">
+                <mat-card class="card" >
+                    <div class="image" fxLayout="row" fxLayoutAlign="center center">
+                        <img mat-card-image src="../../assets/pic.jpg" alt="Product Image">
+                    </div>
+                    <mat-card-title class="name"> {{product[i].name}} </mat-card-title>
+                    <mat-card-title class="category"> {{product[i].category.categoryName}} </mat-card-title>
+                    <hr>
+                    <div fxLayout="row" fxLayoutAlign="center center" >
+                        <mat-card-title class="price"> {{product[i].price}} </mat-card-title>
+                        <div fxFlex="15px"></div>
+                        <mat-card-title class="currency" > {{product[i].currency}} </mat-card-title>
+                    </div>
+                    <mat-card-actions fxLayout="row" fxLayoutAlign="center center" >
+                        <button mat-raised-button color="primary">Add to Cart</button>
+                        <div fxFlex="15px"></div>
+                        <button mat-raised-button color="warn">Product Details</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
         </div>
-        <mat-card-title class="name"> {{product[i].name}} </mat-card-title>
-        <mat-card-title class="category"> {{product[i].category.categoryName}} </mat-card-title>
-        <hr>
-        <div fxLayout="row" fxLayoutAlign="center center" >
-            <mat-card-title class="price"> {{product[i].price}} </mat-card-title>
-            <div fxFlex="15px"></div>
-            <mat-card-title class="currency" > {{product[i].currency}} </mat-card-title>
-        </div>
-        <mat-card-actions fxLayout="row" fxLayoutAlign="center center" >
-            <button mat-raised-button color="primary">Add to Cart</button>
-            <div fxFlex="15px"></div>
-            <button mat-raised-button color="warn">Product Details</button>
-        </mat-card-actions>
-    </mat-card>
+    </div>
 </div>
